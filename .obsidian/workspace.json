@@ -1,0 +1,271 @@
+{
+  "main": {
+    "id": "e1e427011d4d958e",
+    "type": "split",
+    "children": [
+      {
+        "id": "b7094ededcaa31d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ec73a63127aa4901",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Data Structure/Binary Index Tree (Fenwick Tree).md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Binary Index Tree (Fenwick Tree)"
+            }
+          },
+          {
+            "id": "d5af890aadf18406",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Graph Traversal/Graph Traversal.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Graph Traversal"
+            }
+          },
+          {
+            "id": "a0e5df594efb3bad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Graph Traversal/Graph/2-SAT.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2-SAT"
+            }
+          },
+          {
+            "id": "4dccce896fa4d2e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Graph Traversal/Graph/Articulation Points and Bridges.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Articulation Points and Bridges"
+            }
+          },
+          {
+            "id": "af4bd265ea00bc98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Cycle Detection in Directed Graphs"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "10f6488795847b53",
+    "type": "split",
+    "children": [
+      {
+        "id": "9f57da24b528a339",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "78db3b3548e0d203",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "88d532596f1cfd08",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "8ae3fad3458decbd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "813fcd38b339de5b",
+    "type": "split",
+    "children": [
+      {
+        "id": "987f1638773bec95",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "25e2d2fdf898b49b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Data Structure/Binary Index Tree (Fenwick Tree).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Binary Index Tree (Fenwick Tree) 的反向链接列表"
+            }
+          },
+          {
+            "id": "1c3b5eaa51f71cb2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Data Structure/Binary Index Tree (Fenwick Tree).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Binary Index Tree (Fenwick Tree) 的出链列表"
+            }
+          },
+          {
+            "id": "176fb534a5db5e25",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "207dda28892ff4e6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "1f8a40bad01beff4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Data Structure/Binary Index Tree (Fenwick Tree).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Binary Index Tree (Fenwick Tree) 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "af4bd265ea00bc98",
+  "lastOpenFiles": [
+    "未命名.base",
+    "未命名 1.base",
+    "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
+    "Graph Traversal/Graph Traversal.md",
+    "Graph Traversal/Graph/PNG for Graph/cycle-detection-dg-example.png",
+    "Graph Traversal/Graph/PNG for Graph",
+    "Graph Traversal",
+    "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
+    "Graph Traversal/Graph/Common Pitfalls / Confusions.md",
+    "Graph Traversal/Graph/2-SAT.md",
+    "未命名.md",
+    "Graph Traversal/Graph/Articulation Points and Bridges.md",
+    "Graph Traversal/Graph",
+    "Graph Traversal/Graph/Common Pitfalls ",
+    "Graph Traversal/Graph/Comparison Summary.md",
+    "Graph Traversal/Graph/Strongly Connected Components (Kosaraju Tarjan).md",
+    "Graph Traversal/Graph/Bipartite Graph Check.md",
+    "Graph Traversal/Graph/Count Paths in DAG by Topological Order + DP.md",
+    "Strongly Connected Components (Kosaraju / Tarjan).md",
+    "Topological Sort (DFS / Kahn).md",
+    "Strongly Connected Components (Kosaraju ",
+    "Topological Sort (DFS ",
+    "1. Cycle Detection in Directed Graphs.md",
+    "Data Structure/Binary Index Tree (Fenwick Tree).md",
+    "Data Structure"
+  ]
+}
