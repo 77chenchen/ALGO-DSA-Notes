@@ -151,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data Structure/Binary Index Tree (Fenwick Tree).md",
+                "file": "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Binary Index Tree (Fenwick Tree) 的反向链接列表"
+              "title": "Cycle Detection in Directed Graphs 的反向链接列表"
             }
           },
           {
@@ -221,13 +221,23 @@
               "icon": "lucide-list",
               "title": "Binary Index Tree (Fenwick Tree) 的大纲"
             }
+          },
+          {
+            "id": "21e28b774e3cded9",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -237,15 +247,19 @@
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "bases:新建数据库": false
+      "bases:新建数据库": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "publish:发布更改": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "af4bd265ea00bc98",
   "lastOpenFiles": [
+    "Graph Traversal/Graph Traversal.md",
+    "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
+    "ALGO-DSA-Notes",
     "未命名.base",
     "未命名 1.base",
-    "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
-    "Graph Traversal/Graph Traversal.md",
     "Graph Traversal/Graph/PNG for Graph/cycle-detection-dg-example.png",
     "Graph Traversal/Graph/PNG for Graph",
     "Graph Traversal",

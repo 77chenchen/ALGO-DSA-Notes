@@ -1,12 +1,8 @@
-# Cycle Detection in Directed Graphs | 有向图判环
 
-> [!abstract]
-> **Goal**: Determine whether a directed graph contains a cycle.  
-> **核心任务**：判断一个有向图中是否存在环。
 
 ---
 
-## 1. Core Idea | 核心思想
+## 1. Core Idea 
 
 在 **有向图（Directed Graph）** 中，判环最经典的方法是 **DFS + 三色标记（3-color DFS）**。
 
@@ -27,7 +23,7 @@
 
 ---
 
-## 2. Key Observation | 关键观察
+## 2. Key Observation 
 
 > [!important]
 > 在有向图中，**出现一条指向“正在访问中的节点”的边**，就说明存在环。
@@ -40,7 +36,7 @@
 
 ---
 
-## 3. Visual Intuition | 图形直觉
+## 3. Visual Intuition 
 
 下面这个图中存在一个环：`1 -> 2 -> 3 -> 1`
 
@@ -72,10 +68,9 @@ graph LR
 
 
 ![[cycle-detection-dg-example.png]]
-
 ---
 
-## 5. Algorithm | 算法流程
+## 5. Algorithm 
 
 ### DFS 判环步骤
 
@@ -89,7 +84,7 @@ graph LR
 
 ---
 
-## 6. C++ Implementation | C++ 代码实现
+## 6. C++ Implementation
 
 ```cpp
 #include <bits/stdc++.h>
@@ -116,7 +111,7 @@ public:
             color[u] = 2; // finished exploring
             return false;
         };
-
+		//graph may not be continued, e.g. {0 1 2 0 3} {4 5}
         for (int i = 0; i < n; i++) {
             if (color[i] == 0) {
                 if (dfs(i)) return true;
@@ -152,7 +147,7 @@ int main() {
 
 ---
 
-## 7. Code Explanation | 代码解析
+## 7. Code Explanation 
 
 ### `color[u] = 1`
 表示当前节点 `u` 正在 DFS 中，也就是它在递归栈里。
@@ -169,7 +164,7 @@ int main() {
 
 ---
 
-## 8. Complexity | 复杂度
+## 8. Complexity 
 
 每个点最多访问一次，每条边最多检查一次，所以：
 
@@ -183,7 +178,7 @@ int main() {
 
 ---
 
-## 9. Common Pitfalls | 常见易错点
+## 9. Common Pitfalls 
 
 > [!warning]
 > **Pitfall 1:** 不要把有向图判环和无向图判环混在一起。  
@@ -217,36 +212,54 @@ int main() {
 - **能拓扑排序完所有点** -> 无环
 - **不能处理完所有点** -> 有环
 
-> [!note]
-> 面试和竞赛里，DFS 判环和 Kahn 判环都很常见。  
-> 如果题目顺便要求拓扑序，Kahn 往往更方便。
+### CPP Implementation
 
----
-
-## 11. Mini Example 
-
-考虑图：
-
-```mermaid
-graph LR
-    A --> B
-    B --> C
-    C --> D
-    D --> B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+    public:
+        // Kahn Algo
+        bool hasCycle(int n, vector<vector<int>> adj){
+            vector<int> indegree(n,0);
+            for(int i = 0; i < n; i++){
+                for(int v : adj[i]){
+                    indegree[v]++;
+                }
+            }
+            queue<int> q;
+            for(int i = 0; i < n; i++){
+                if(indegree[i] == 0){
+                    q.push(i);
+                }
+            }
+            int processedCount = 0;
+            while(!q.empty()){
+                int u = q.front();
+                q.pop();
+                processedCount++;
+                for(int v : adj[u]){
+                    indegree[v]--;
+                    if(indegree[v] == 0){
+                        q.push(v);
+                    }
+                }
+            }
+            return processedCount != n;
+        }
+};
+int main(){
+    vector<vector<int>> G(4);
+    G[0].push_back(1);
+    G[1].push_back(2);
+    G[2].push_back(3);
+    G[2].push_back(0);
+    Solution s;
+    if(s.hasCycle(4,G)){
+        cout << "HAS" << endl;
+    }
+    return 0;
+}
 ```
-
-这里有一条环：
-
-`B -> C -> D -> B`
-
-如果从 `A` 开始 DFS：
-
-- `A` visiting
-- `B` visiting
-- `C` visiting
-- `D` visiting
-- `D -> B`，发现 `B` 仍然是 visiting
-
-因此判定有环。
 
 ---
