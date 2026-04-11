@@ -253,8 +253,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "78db3b3548e0d203",
+  "active": "af4bd265ea00bc98",
   "lastOpenFiles": [
+    "Kahn Algorithm.md",
+    "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
+    "课程先修关系.md",
     "Graph Traversal/Graph Traversal.md",
     "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
     "Graph Traversal/Graph/Count Paths in DAG by Topological Order + DP.md",
@@ -264,7 +267,6 @@
     "Graph Traversal/Graph/PNG for Graph/cycle-detection-dg-example.png",
     "Graph Traversal/Graph/PNG for Graph",
     "Graph Traversal",
-    "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
     "Graph Traversal/Graph/Common Pitfalls / Confusions.md",
     "Graph Traversal/Graph/2-SAT.md",
     "未命名.md",

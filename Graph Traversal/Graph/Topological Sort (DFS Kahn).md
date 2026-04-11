@@ -10,17 +10,7 @@ aliases:
   - Topological Sort
   - 拓扑排序
 ---
----
-tags:
-  - algorithm
-  - graph
-  - dfs
-  - bfs
-  - topological-sort
-  - kahn
-aliases:
-  - Topological Sort
-  - 拓扑排序
+
 ---
 
 # Topological Sort（拓扑排序）
@@ -71,8 +61,8 @@ aliases:
 
 # 3. 两种经典做法
 
-1. [[DFS]] 实现拓扑排序  
-2. [[Kahn Algorithm]]（基于入度，BFS 风格）
+1. DFS 实现拓扑排序  
+2. Kahn Algorithm（基于入度，BFS 风格）
 
 ---
 
@@ -416,86 +406,8 @@ $$
 - 担心栈深度问题
 
 ---
+# 11.串联
 
-# 11. 面试/考试一句话总结
 
-> [!summary]
-> **DFS 拓扑排序**：按 DFS 完成时间逆序排列。  
-> **Kahn 拓扑排序**：不断删除入度为 0 的点。  
-> **如果图中有环，则不存在拓扑排序。**
 
 ---
-
-# 12. 记忆口诀
-
-```text
-DFS：走到底，回头放，最后反转得到序
-Kahn：谁没前驱谁先上，删边减入度
-```
-
----
-
-# 13. 可以链接的相关笔记
-
-- [[Graph]]
-- [[DAG]]
-- [[DFS]]
-- [[BFS]]
-- [[Cycle Detection]]
-- [[In-degree]]
-- [[Dynamic Programming on DAG]]
-- [[Strongly Connected Components]]
-
----
-
-# 14. 刷题时的判断模板
-
-## 若题目出现这些关键词：
-- prerequisite
-- dependency
-- course schedule
-- task ordering
-- build order
-- if possible to finish all courses
-
-就优先考虑：
-
-- 拓扑排序
-- DAG
-- 环检测
-
----
-
-# 15. 一眼判断这题是不是拓扑排序
-
-满足以下特征时，通常是：
-
-- 有“先后顺序”
-- 有“依赖关系”
-- 问“是否可以完成”
-- 问“给出一个合法顺序”
-
----
-
-# 16. 自己补充的理解
-
-## 我对 DFS topo sort 的理解
-- 不是“访问到就放”
-- 而是“所有后继处理完才放”
-- 所以它本质上是在记录“完成顺序”
-
-## 我对 Kahn 的理解
-- 入度为 0 = 当前没有任何前置要求
-- 所以它一定可以最先安排
-
----
-
-# 17. 最终结论
-
-> [!success]
-> 拓扑排序是处理 **有向依赖关系** 的核心工具。  
-> 
-> - **DFS 法**：利用回溯后的完成顺序  
-> - **Kahn 法**：利用入度为 0 的点逐步扩展  
-> 
-> 两者都能在 `O(V+E)` 时间内完成。
