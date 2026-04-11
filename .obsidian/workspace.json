@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
+                "file": "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cycle Detection in Directed Graphs"
+              "title": "Topological Sort (DFS Kahn)"
             }
           }
         ],
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:topological-sort",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -151,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
+                "file": "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Cycle Detection in Directed Graphs 的反向链接列表"
+              "title": "Topological Sort (DFS Kahn) 的反向链接列表"
             }
           },
           {
@@ -253,10 +253,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "af4bd265ea00bc98",
+  "active": "78db3b3548e0d203",
   "lastOpenFiles": [
     "Graph Traversal/Graph Traversal.md",
     "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
+    "Graph Traversal/Graph/Count Paths in DAG by Topological Order + DP.md",
     "ALGO-DSA-Notes",
     "未命名.base",
     "未命名 1.base",
@@ -273,7 +274,6 @@
     "Graph Traversal/Graph/Comparison Summary.md",
     "Graph Traversal/Graph/Strongly Connected Components (Kosaraju Tarjan).md",
     "Graph Traversal/Graph/Bipartite Graph Check.md",
-    "Graph Traversal/Graph/Count Paths in DAG by Topological Order + DP.md",
     "Strongly Connected Components (Kosaraju / Tarjan).md",
     "Topological Sort (DFS / Kahn).md",
     "Strongly Connected Components (Kosaraju ",
