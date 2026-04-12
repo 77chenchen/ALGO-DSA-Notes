@@ -148,22 +148,6 @@ bool isBipartite(int n) {
 
 ---
 
-## 7. Why We Must Loop Through All Vertices
-
-Because the graph may be **disconnected**.
-
-So one BFS/DFS is not enough.
-
-We must do:
-
-```cpp
-for (int i = 0; i < n; i++)
-```
-
-and start BFS/DFS from every uncolored vertex.
-
----
-
 ## 8. Important Theorem
 
 > An undirected graph is bipartite **iff** it contains **no odd cycle**.
@@ -242,42 +226,5 @@ where:
 - `V` = number of vertices
 - `E` = number of edges
 
----
-
-## 12. Common Mistakes
-
-### 1. Forgetting disconnected graphs
-Always iterate through all vertices.
-
-### 2. Confusing directed and undirected graphs
-Bipartite graphs are usually defined for **undirected graphs**.
-
-### 3. Wrong color representation
-A clean convention is:
-
-- `0` = uncolored
-- `1` = first color
-- `-1` = second color
-
-### 4. Not returning immediately on conflict
-Once `color[u] == color[v]` for an edge `(u, v)`, return `false`.
 
 ---
-
-## 13. Quick Summary
-
-> Bipartite Graph Check is essentially a **2-coloring problem**.  
-> If we can color the graph with two colors so that adjacent vertices always differ, then the graph is bipartite.
-
----
-
-## 14. Memory Trick
-
-```text
-Two colors, alternate flow,
-Neighbors different as we go.
-Same-color edge? Then stop the light,
-This graph is not bipartite.
-Odd cycle hiding in the way,
-Means bipartite will fail that day.
-```
