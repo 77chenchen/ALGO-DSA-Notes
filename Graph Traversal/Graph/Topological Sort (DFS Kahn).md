@@ -104,7 +104,7 @@ aliases:
 
 ---
 
-## 4.3 DFS 版本的伪代码
+## 4.3 DFS 
 
 ```cpp
 vector<int> topo;
@@ -116,7 +116,7 @@ bool dfs(int u) {
 
     for (int v : adj[u]) {
         if (state[v] == 0) {
-            if (!dfs(v)) return false;
+            if (!dfs(v)) return false; // 发现子树有环 递归传递信息
         } else if (state[v] == 1) {
             return false; // 发现环
         }
@@ -124,7 +124,7 @@ bool dfs(int u) {
 
     state[u] = 2; 
     topo.push_back(u); // 回溯时加入
-    return true;
+    return true; //无环
 }
 
 bool topological_sort_dfs(int n) {
@@ -133,7 +133,7 @@ bool topological_sort_dfs(int n) {
 
     for (int i = 0; i < n; i++) {
         if (state[i] == 0) {
-            if (!dfs(i)) return false;
+            if (!dfs(i)) return false; //graph is not acyclic, there is no topological sort 
         }
     }
 
@@ -168,7 +168,6 @@ bool topological_sort_dfs(int n) {
 
 ### 缺点
 - 递归太深可能爆栈
-- 对初学者来说，“为什么要反转结果”不够直观
 
 ---
 
@@ -191,7 +190,7 @@ bool topological_sort_dfs(int n) {
 
 ---
 
-## 5.2 Kahn 版本伪代码
+## 5.2 Kahn Algo
 
 ```cpp
 vector<int> topological_sort_kahn(int n) {
@@ -250,26 +249,10 @@ vector<int> topological_sort_kahn(int n) {
 
 ### 优点
 - 非递归，不怕爆栈
-- “入度为 0 才能先做”这个逻辑很直观
-- 非常适合课程安排、任务依赖这类题
 
 ### 缺点
 - 需要额外维护入度数组
-- 如果想理解更深层的 DFS 性质，Kahn 不如 DFS 那么“图论味”
 
----
-
-# 6. DFS vs Kahn 对比
-
-| 方面 | DFS Topo Sort | Kahn Algorithm |
-|---|---|---|
-| 基本思想 | 回溯后入栈，最后反转 | 每次取入度为 0 的点 |
-| 风格 | DFS / 递归 | BFS / 队列 |
-| 是否需要反转答案 | 需要 | 不需要 |
-| 环检测方式 | 三色标记 / 递归栈 | 结果点数是否小于 n |
-| 是否可能爆栈 | 可能 | 不会 |
-| 直观性 | 稍抽象 | 更直观 |
-| 常见用途 | 图论分析、DFS 题型 | 依赖调度、课程安排 |
 
 ---
 
@@ -373,41 +356,3 @@ $$
 
 ---
 
-# 9. 常见易错点
-
-> [!warning] 易错点 1
-> 拓扑排序 **只适用于有向图**，通常讨论的是 **DAG**。
-
-> [!warning] 易错点 2
-> DFS 方法得到的通常是“完成顺序”，最后要 **reverse**。
-
-> [!warning] 易错点 3
-> Kahn 算法中，**初始时要把所有入度为 0 的点都入队**，不是只放一个。
-
-> [!warning] 易错点 4
-> 有多个入度为 0 的点时，拓扑序 **不唯一**。
-
-> [!warning] 易错点 5
-> 如果结果长度 `< n`，说明图中有环，不存在拓扑排序。
-
----
-
-# 10. 什么时候用哪一种？
-
-## 用 DFS 更合适
-- 题目本来就是 DFS 框架
-- 你还想顺便做环检测
-- 你更熟悉递归写法
-
-## 用 Kahn 更合适
-- 题目本质是依赖关系 / 课程安排
-- 你想要更直观的过程
-- 不想写递归
-- 担心栈深度问题
-
----
-# 11.串联
-
-
-
----
