@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
+                "file": "Graph Traversal/Graph/Bipartite Graph Check.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Topological Sort (DFS Kahn)"
+              "title": "Bipartite Graph Check"
             }
           }
         ],
@@ -151,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
+                "file": "Graph Traversal/Graph/Bipartite Graph Check.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Topological Sort (DFS Kahn) 的反向链接列表"
+              "title": "Bipartite Graph Check 的反向链接列表"
             }
           },
           {
@@ -255,12 +255,14 @@
   },
   "active": "af4bd265ea00bc98",
   "lastOpenFiles": [
-    "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
     "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
+    "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
+    "Graph Traversal/Graph/Strongly Connected Components (Kosaraju Tarjan).md",
+    "Graph Traversal/Graph/Count Paths in DAG by Topological Order + DP.md",
+    "Graph Traversal/Graph/Bipartite Graph Check.md",
     "Kahn Algorithm.md",
     "课程先修关系.md",
     "Graph Traversal/Graph Traversal.md",
-    "Graph Traversal/Graph/Count Paths in DAG by Topological Order + DP.md",
     "ALGO-DSA-Notes",
     "未命名.base",
     "未命名 1.base",
@@ -274,8 +276,6 @@
     "Graph Traversal/Graph",
     "Graph Traversal/Graph/Common Pitfalls ",
     "Graph Traversal/Graph/Comparison Summary.md",
-    "Graph Traversal/Graph/Strongly Connected Components (Kosaraju Tarjan).md",
-    "Graph Traversal/Graph/Bipartite Graph Check.md",
     "Strongly Connected Components (Kosaraju / Tarjan).md",
     "Topological Sort (DFS / Kahn).md",
     "Strongly Connected Components (Kosaraju ",
