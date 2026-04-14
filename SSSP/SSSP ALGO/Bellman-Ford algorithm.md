@@ -107,7 +107,6 @@ $$
 
 ## 7. Why Repeat `V-1` Times?
 
-Bellman-Ford 要重复做 `|V|-1` 轮松弛。
 
 原因：
 
@@ -448,110 +447,7 @@ p[1] = 0
 0 -> 1 -> 2 -> 3
 ```
 
----
-
-## 19. Bellman-Ford vs Dijkstra
-
-| Algorithm | Negative Edges | Detect Negative Cycle | Typical Speed |
-|----------|----------------|-----------------------|---------------|
-| Bellman-Ford | Yes | Yes | Slower |
-| Dijkstra | No | No | Faster on nonnegative graphs |
-
-结论：
-
-- 有负权边：优先考虑 Bellman-Ford
-- 全非负边：通常用 Dijkstra 更高效
 
 ---
 
-## 20. Why Bellman-Ford Is Correct
 
-Bellman-Ford 正确性的核心在于：
-
-1. 初始化时，只有源点距离是正确的
-2. 每一轮松弛，都会尝试用“前面已经知道的最短路”去扩展一条边
-3. 第 `i` 轮后，所有最多 `i` 条边的最短路都会被正确算出
-4. 所有合法最短路最多只需 `V-1` 条边
-5. 所以做完 `V-1` 轮后，所有最短路都已经正确
-
----
-
-## 21. Common Mistakes
-
-### Mistake 1: 认为负权边一定不行
-
-错误。  
-真正的问题是 **负权环**，不是单个负权边。
-
----
-
-### Mistake 2: 认为 Bellman-Ford 一定要做满 `V-1` 轮
-
-不一定。  
-如果某轮没有任何更新，可以提前停止。
-
----
-
-### Mistake 3: 忘了最后一轮负环检测
-
-如果少了这一轮，就无法判断结果是否因负权环而失效。
-
----
-
-### Mistake 4: 认为图中有负权环就所有点都完了
-
-不一定。  
-只有那些 **能被该负权环影响到的点** 才会变成 `-∞`。
-
----
-
-## 22. Intuition Summary
-
-可以把 Bellman-Ford 理解成：
-
-- `D[u]` 一开始是对最短距离的保守估计
-- 每次 relax 都是在尝试找到更短的路径
-- 每一轮会把“最短路信息”向外传播一层
-- 做满 `V-1` 轮后，所有合法最短路都已覆盖
-- 如果之后还能继续变小，就说明存在从源点可达的负权环
-
----
-
-## 23. Exam-Style Summary
-
-Bellman-Ford is a single-source shortest path algorithm for weighted directed graphs, including graphs with negative edge weights. It repeatedly relaxes all edges for `|V|-1` rounds. After the `i`-th round, all shortest paths that use at most `i` edges are correctly computed. An additional round is used to detect reachable negative cycles. Its time complexity is `O(VE)`.
-
----
-
-## 24. Short Chinese Summary
-
-- Bellman-Ford 用来做单源最短路
-- 它可以处理负权边
-- 它通过反复扫描所有边来做松弛
-- 最多做 `V-1` 轮
-- 第 `i` 轮后，最多经过 `i` 条边的最短路已正确
-- 再多检查一轮可以检测从源点可达的负权环
-- 时间复杂度为 `O(VE)`
-
----
-
-## 25. Keywords
-
-- [[SSSP]]
-- [[Relaxation]]
-- [[Negative Edge]]
-- [[Negative Cycle]]
-- [[Dijkstra Algorithm]]
-- [[Shortest Path Tree]]
-- [[Graph Algorithms]]
-
----
-
-## 26. Must-Remember Points
-
-1. Bellman-Ford handles negative edges.
-2. Bellman-Ford detects reachable negative cycles.
-3. Relaxation is the key operation.
-4. After pass `i`, shortest paths with at most `i` edges are correct.
-5. A valid shortest simple path has at most `V-1` edges.
-6. Time complexity is `O(VE)`.
