@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graph Traversal/Graph/Articulation Points and Bridges.md",
+                "file": "SSSP/SSSP ALGO/Bellman-Ford algorithm.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Articulation Points and Bridges"
+              "title": "Bellman-Ford algorithm"
             }
           }
         ],
@@ -151,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graph Traversal/Graph/Articulation Points and Bridges.md",
+                "file": "SSSP/SSSP ALGO/Bellman-Ford algorithm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Articulation Points and Bridges 的反向链接列表"
+              "title": "Bellman-Ford algorithm 的反向链接列表"
             }
           },
           {
@@ -253,8 +253,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "af4bd265ea00bc98",
+  "active": "78db3b3548e0d203",
   "lastOpenFiles": [
+    "SSSP/SSSP ALGO",
+    "SSSP",
+    "SSSP/SSSP Problem.md",
+    "SSSP/SSSP ALGO/Bellman-Ford algorithm.md",
+    "Graph Traversal/Graph/Articulation Points and Bridges.md",
     "Graph Traversal/Graph/Strongly Connected Components (Kosaraju Tarjan).md",
     "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
     "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
@@ -272,8 +277,6 @@
     "Graph Traversal",
     "Graph Traversal/Graph/Common Pitfalls / Confusions.md",
     "Graph Traversal/Graph/2-SAT.md",
-    "未命名.md",
-    "Graph Traversal/Graph/Articulation Points and Bridges.md",
     "Graph Traversal/Graph",
     "Graph Traversal/Graph/Common Pitfalls ",
     "Strongly Connected Components (Kosaraju / Tarjan).md",
@@ -281,7 +284,6 @@
     "Strongly Connected Components (Kosaraju ",
     "Topological Sort (DFS ",
     "1. Cycle Detection in Directed Graphs.md",
-    "Data Structure/Binary Index Tree (Fenwick Tree).md",
-    "Data Structure"
+    "Data Structure/Binary Index Tree (Fenwick Tree).md"
   ]
 }
