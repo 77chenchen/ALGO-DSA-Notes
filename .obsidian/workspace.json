@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SSSP/SSSP ALGO/BFS for SSSP.md",
+                "file": "SSSP/SSSP ALGO/Dijkstra Algorithm.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "BFS for SSSP"
+              "title": "Dijkstra Algorithm"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SSSP/SSSP ALGO/BFS for SSSP.md",
+                "file": "SSSP/SSSP ALGO/Dijkstra Algorithm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "BFS for SSSP 的反向链接列表"
+              "title": "Dijkstra Algorithm 的反向链接列表"
             }
           },
           {
@@ -269,11 +269,12 @@
   },
   "active": "2ca15f8005523936",
   "lastOpenFiles": [
-    "SSSP/SSSP ALGO/Bellman-Ford algorithm.md",
+    "SSSP/SSSP ALGO/Dijkstra Algorithm.md",
+    "SSSP/SSSP Problem.md",
     "SSSP/SSSP ALGO/BFS for SSSP.md",
+    "SSSP/SSSP ALGO/Bellman-Ford algorithm.md",
     "SSSP/SSSP ALGO",
     "SSSP",
-    "SSSP/SSSP Problem.md",
     "Graph Traversal/Graph/Articulation Points and Bridges.md",
     "Graph Traversal/Graph/Strongly Connected Components (Kosaraju Tarjan).md",
     "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
