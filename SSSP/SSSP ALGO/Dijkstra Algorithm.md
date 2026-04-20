@@ -250,3 +250,78 @@ Dijkstra 一开始会觉得：
 
 ---
 
+## C++实现
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+const ll INF = 4e18;
+
+struct Edge {
+    int to;
+    ll w;
+};
+
+vector<ll> dijkstra(int n, int start, const vector<vector<Edge>>& graph) {
+    vector<ll> dist(n + 1, INF);
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> pq;
+
+    dist[start] = 0;
+    pq.push({0, start});
+
+    while (!pq.empty()) {
+        auto [d, u] = pq.top();
+        pq.pop();
+
+        // 如果这个状态已经过期，就跳过
+        if (d != dist[u]) continue;
+
+        for (const auto& e : graph[u]) {
+            int v = e.to;
+            ll w = e.w;
+
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    return dist;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n, m;
+    cin >> n >> m;
+
+    vector<vector<Edge>> graph(n + 1);
+
+    // 输入 m 条边：u v w
+    for (int i = 0; i < m; i++) {
+        int u, v;
+        ll w;
+        cin >> u >> v >> w;
+
+        graph[u].push_back({v, w});
+
+        // 如果是无向图，把下面这行也打开
+        // graph[v].push_back({u, w});
+    }
+
+    int start;
+    cin >> start;
+
+    vector<ll> dist = dijkstra(n, start, graph);
+
+    for (int i = 1; i <= n; i++) {
+        if (dist[i] == INF) cout << "INF\n";
+        else cout << dist[i] << "\n";
+    }
+
+    return 0;
+}
+```
