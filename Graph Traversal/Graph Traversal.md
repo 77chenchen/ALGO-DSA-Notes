@@ -1,4 +1,4 @@
-## Table of Contents | 目录
+## Table of Contents 
 
 1. [[Cycle Detection in Directed Graphs|Cycle Detection in Directed Graphs | 有向图判环]]
 
