@@ -1,6 +1,11 @@
 
+# Cycle Detection in Directed Graphs
 
----
+> [!summary]
+> 有向图判环最常用的是 **DFS + three colors**。  
+> 如果 DFS 过程中遇到仍在递归栈中的节点，就发现了 back edge，也就说明存在 directed cycle。
+
+Related: [[Graph Traversal]] | [[Topological Sort (DFS Kahn)]]
 
 ## 1. Core Idea 
 
@@ -33,8 +38,6 @@
 - 遇到 `color[v] == 1`
 - 就表示发现了 **back edge（返祖边）**
 - 因而图中有环
-
----
 
 ## 3. Visual Intuition 
 
@@ -144,8 +147,6 @@ int main() {
     return 0;
 }
 ```
-
----
 
 ## 7. Code Explanation 
 
@@ -263,3 +264,9 @@ int main(){
 ```
 
 ---
+
+## Links
+
+- Back to [[Graph Traversal]]
+- Next: [[Topological Sort (DFS Kahn)]]
+- Related: [[Common Pitfalls and Confusions]]

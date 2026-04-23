@@ -1,5 +1,11 @@
 # Dijkstra's Algorithm
 
+> [!summary]
+> **Dijkstra's Algorithm** 用于解决非负权图上的 Single-Source Shortest Path。  
+> 它每次确定当前距离最小的未处理顶点，并用该顶点继续 relax 邻边。
+
+Related: [[SSSP Problem]] | [[Modified Dijkstra]] | [[Bellman-Ford algorithm]]
+
 ## 1. 核心思想
 
 Dijkstra 算法用于求解：
@@ -250,7 +256,7 @@ Dijkstra 一开始会觉得：
 
 ---
 
-## C++实现
+## C++ Implementation
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -325,3 +331,10 @@ int main() {
     return 0;
 }
 ```
+
+## Links
+
+- Back to [[SSSP Problem]]
+- Previous: [[BFS for SSSP]]
+- Next: [[Modified Dijkstra]]
+- Related: [[Bellman-Ford algorithm]]

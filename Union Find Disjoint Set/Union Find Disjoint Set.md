@@ -1,4 +1,5 @@
 
+# Union-Find Disjoint Sets
 
 > [!summary]
 > **Union-Find Disjoint Sets（并查集）** 是一种维护“若干个互不相交集合”的数据结构。  
@@ -235,8 +236,6 @@ public:
 };
 ```
 
----
-
 ### 5.2 按 size 合并版本
 
 很多题里更常用的是 **union by size**：
@@ -287,8 +286,6 @@ public:
 - 可以方便维护集合大小
 - 写法很自然
 - 很多竞赛题更喜欢这一版
-
----
 
 ## 6. 复杂度
 
@@ -426,3 +423,9 @@ public:
 ```
 
 ---
+
+## Links
+
+- Related: [[Kruskal]]
+- Related: [[MST]]
+- Related: [[Binary Search Tree]]

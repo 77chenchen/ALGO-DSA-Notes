@@ -1,4 +1,11 @@
 
+# Modified Dijkstra
+
+> [!summary]
+> **Modified Dijkstra** 通常指 lazy-update heap 版本的 Dijkstra。  
+> 它不做真正的 `DecreaseKey`，而是在找到更短距离时重新 push，pop 时跳过过期状态。
+
+Related: [[SSSP Problem]] | [[Dijkstra Algorithm]] | [[Bellman-Ford algorithm]]
 
 ## 1. Core Idea
 
@@ -19,8 +26,6 @@ So instead of modifying an existing key in the heap, we do this:
 - when popping from the heap, ignore the entry if it is outdated.
 
 This technique is called **Lazy Update**.
-
----
 
 ## 2. What Problem It Solves
 
@@ -392,3 +397,10 @@ Final result:
 This shows why repeated reprocessing can sometimes repair earlier suboptimal values.
 
 ---
+
+## Links
+
+- Back to [[SSSP Problem]]
+- Previous: [[Dijkstra Algorithm]]
+- Next: [[Bellman-Ford algorithm]]
+- Related: [[BFS for SSSP]]

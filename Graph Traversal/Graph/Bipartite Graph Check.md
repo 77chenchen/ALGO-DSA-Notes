@@ -1,4 +1,11 @@
 
+# Bipartite Graph Check
+
+> [!summary]
+> Bipartite Graph Check 判断一个无向图能否被分成两个集合，使每条边都跨集合连接。  
+> 等价地，它判断图能否被 2-coloring，且任意相邻点颜色不同。
+
+Related: [[Graph Traversal]] | [[Cycle Detection in Directed Graphs]]
 
 ## 1. Definition
 
@@ -11,8 +18,6 @@ Equivalent view:
 
 > A graph is bipartite **iff** it can be colored using **two colors** so that adjacent vertices always have different colors.
 
----
-
 ## 2. Goal of Bipartite Graph Check
 
 We want to determine whether a graph is bipartite.
@@ -20,8 +25,6 @@ We want to determine whether a graph is bipartite.
 That means checking whether we can assign two colors to all vertices such that:
 
 - for every edge `(u, v)`, `color[u] != color[v]`
-
----
 
 ## 3. Core Idea: Two-Coloring
 
@@ -228,3 +231,10 @@ where:
 
 
 ---
+
+## Links
+
+- Back to [[Graph Traversal]]
+- Previous: [[Count Paths in DAG by Topological Order + DP]]
+- Next: [[Articulation Points and Bridges]]
+- Related: [[Common Pitfalls and Confusions]]

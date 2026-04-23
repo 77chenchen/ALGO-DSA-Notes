@@ -1,4 +1,11 @@
 
+# Articulation Points and Bridges
+
+> [!summary]
+> Articulation Points 和 Bridges 用来找无向图中的关键点和关键边。  
+> 核心工具是 DFS timestamp `num[u]` 和 low-link value `low[u]`。
+
+Related: [[Graph Traversal]] | [[Common Pitfalls and Confusions]]
 
 ## 1. 基本概念
 
@@ -391,3 +398,10 @@ childCount >= 2
 看子树能不能绕回祖先：
 - 不能绕回 ⇒ 父边 / 父点关键
 - 能绕回 ⇒ 不关键
+
+## Links
+
+- Back to [[Graph Traversal]]
+- Previous: [[Bipartite Graph Check]]
+- Next: [[Strongly Connected Components (Kosaraju Tarjan)]]
+- Related: [[Common Pitfalls and Confusions]]

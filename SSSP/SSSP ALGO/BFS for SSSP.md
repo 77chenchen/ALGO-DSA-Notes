@@ -1,12 +1,17 @@
 
+# BFS for SSSP
+
+> [!summary]
+> BFS 可以在线性时间内解决 **无权图** 或 **所有边权相同图** 的 Single-Source Shortest Path。  
+> 它的关键性质是按层扩展，第一次访问到某个点时就得到最少边数距离。
+
+Related: [[SSSP Problem]] | [[Dijkstra Algorithm]] | [[Bellman-Ford algorithm]]
 
 ## 1. 核心问题
 
 **SSSP = Single-Source Shortest Path**
 
 给定一个源点 `s`，求从 `s` 到图中每个点 `u` 的最短路径长度 `δ(s, u)`，以及对应的实际路径。
-
----
 
 ## 2. BFS 能解决哪类 SSSP？
 
@@ -227,3 +232,9 @@ BFS 会选路径 A，原因是它边数更少。
 **BFS 只保证边数最少，不保证总权重最小。**
 
 ---
+
+## Links
+
+- Back to [[SSSP Problem]]
+- Next: [[Dijkstra Algorithm]]
+- Related: [[Graph Traversal]]

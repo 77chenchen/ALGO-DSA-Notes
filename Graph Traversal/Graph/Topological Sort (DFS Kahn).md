@@ -10,14 +10,14 @@ aliases:
   - Topological Sort
   - 拓扑排序
 ---
-r
----
 
 # Topological Sort（拓扑排序）
 
-> [!info] 定义
+> [!summary]
 > **Topological Sort** 是对一个 **DAG（Directed Acyclic Graph，有向无环图）** 的顶点进行线性排序，使得  
 > 对每一条有向边 `u -> v`，顶点 `u` 都排在 `v` 前面。
+
+Related: [[Graph Traversal]] | [[Cycle Detection in Directed Graphs]] | [[Count Paths in DAG by Topological Order + DP]]
 
 ---
 
@@ -59,14 +59,14 @@ r
 
 ---
 
-# 3. 两种经典做法
+## 3. 两种经典做法
 
 1. DFS 实现拓扑排序  
 2. Kahn Algorithm（基于入度，BFS 风格）
 
 ---
 
-# 4. DFS 做 Topological Sort
+## 4. DFS 做 Topological Sort
 
 ## 4.1 核心思想
 
@@ -171,7 +171,7 @@ bool topological_sort_dfs(int n) {
 
 ---
 
-# 5. Kahn Algorithm 做 Topological Sort
+## 5. Kahn Algorithm 做 Topological Sort
 
 ## 5.1 核心思想
 
@@ -256,7 +256,7 @@ vector<int> topological_sort_kahn(int n) {
 
 ---
 
-# 7. 一个完整例子
+## 7. 一个完整例子
 
 设图如下：
 
@@ -339,7 +339,7 @@ graph LR
 
 ---
 
-# 8. 时间复杂度
+## 8. 时间复杂度
 
 两种算法时间复杂度都是：
 
@@ -356,7 +356,7 @@ $$
 
 ---
 
-# 9. 深层次理解：
+## 9. 深层次理解
 
 无环” 和 “有拓扑序” 在 DAG 里是等价的，但：
 
@@ -367,3 +367,10 @@ $$
 
 - 失败条件相同：发现环
 - 成功时多做一步：输出顺序
+
+## Links
+
+- Back to [[Graph Traversal]]
+- Previous: [[Cycle Detection in Directed Graphs]]
+- Next: [[Count Paths in DAG by Topological Order + DP]]
+- Related: [[Cycle Detection in Directed Graphs]]

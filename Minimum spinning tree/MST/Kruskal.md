@@ -1,5 +1,10 @@
 # Kruskal's Algorithm
-[[Union Find Disjoint Set]]
+
+> [!summary]
+> **Kruskal's Algorithm** 是求 Minimum Spanning Tree 的经典贪心算法。  
+> 它把所有边按权重排序，然后用 [[Union Find Disjoint Set]] 判断加入一条边是否会成环。
+
+Related: [[MST]] | [[Union Find Disjoint Set]] | [[Prim Algorithm]]
 
 ## 1. MST 是什么
 
@@ -272,3 +277,9 @@ for each edge (u, v, w) in sorted order:
 return T
 ```
 
+## Links
+
+- Back to [[MST]]
+- Previous: [[MST]]
+- Next: [[Prim Algorithm]]
+- Related: [[Union Find Disjoint Set]]

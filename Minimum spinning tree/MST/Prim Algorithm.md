@@ -1,4 +1,11 @@
 
+# Prim Algorithm
+
+> [!summary]
+> **Prim's Algorithm** 是求 Minimum Spanning Tree 的经典贪心算法。  
+> 它从一个起点开始，每次选择当前树连接到外部的最小边，逐步把树扩展到所有顶点。
+
+Related: [[MST]] | [[Kruskal]]
 
 ## 1. Prim 是什么
 
@@ -289,3 +296,8 @@ Prim(s):
                 insert (weight_vx, x) into PQ
 ```
 
+## Links
+
+- Back to [[MST]]
+- Previous: [[Kruskal]]
+- Related: [[Graph Traversal]]

@@ -1,4 +1,11 @@
 
+# Bellman-Ford Algorithm
+
+> [!summary]
+> **Bellman-Ford Algorithm** 用于解决带负权边的 Single-Source Shortest Path，并且可以检测从源点可达的负权环。  
+> 它通过重复 `V - 1` 轮 relax 所有边，把最短路信息逐步传播出去。
+
+Related: [[SSSP Problem]] | [[Dijkstra Algorithm]] | [[Modified Dijkstra]]
 
 ## 1. Overview
 
@@ -450,4 +457,9 @@ p[1] = 0
 
 ---
 
+## Links
+
+- Back to [[SSSP Problem]]
+- Previous: [[Modified Dijkstra]]
+- Related: [[Dijkstra Algorithm]]
 
