@@ -16,10 +16,28 @@ height(x) = max(height(x.left), height(x.right)) + 1
 
 更新节点时，只需要从插入或删除位置一路向 root 回溯，并重新计算路径上的 height。
 
+> [!tip] Implementation Jump
+> `height/size` 维护看 [[09-1 Cpp Node and Utilities#Height and Size Helpers|Height and Size Helpers]]；AVL hook 看 [[09-4 Cpp AVL Rotations and Rebalance#Class Header|AVL class header]]。
+
 ## Balance Factor
 
 ```text
 bf(x) = height(x.left) - height(x.right)
+```
+
+```mermaid
+graph TD
+    X((x))
+    L["left subtree<br/>height = hL"]
+    R["right subtree<br/>height = hR"]
+
+    X -->|left| L
+    X -->|right| R
+```
+
+```text
+bf(x) = hL - hR
+balanced iff bf(x) is -1, 0, or +1
 ```
 
 AVL invariant：
@@ -34,6 +52,9 @@ abs(bf(x)) <= 1 for every node x
 - `bf(x) = -2`: 右边太高。
 
 就需要通过 rotation 恢复平衡。
+
+> [!tip] Implementation Jump
+> `balanceFactor` 和 rebalance 代码看 [[09-4 Cpp AVL Rotations and Rebalance#Balance Factor|Balance Factor]] 与 [[09-4 Cpp AVL Rotations and Rebalance#Rebalance|Rebalance]]。
 
 ## Why AVL Is O(log N)
 
@@ -63,6 +84,9 @@ h < 2 * log2(N)
 
 一次 AVL 插入最多需要常数次 rotation，但仍需要 `O(log N)` 回溯。
 
+> [!tip] Implementation Jump
+> 普通插入看 [[09-3 Cpp BST Insert and Remove#Insert|BST Insert]]；AVL 插入后的修复看 [[09-4 Cpp AVL Rotations and Rebalance#Rebalance|AVL Rebalance]]。
+
 ## Remove in AVL
 
 步骤：
@@ -72,6 +96,9 @@ h < 2 * log2(N)
 3. 每个失衡节点都要修复。
 
 和插入不同，删除可能触发多次 rebalance，但最多沿高度走 `O(log N)` 层。
+
+> [!tip] Implementation Jump
+> 普通删除看 [[09-3 Cpp BST Insert and Remove#Remove Overview|BST Remove]]；AVL 删除后的修复看 [[09-4 Cpp AVL Rotations and Rebalance#Rebalance|AVL Rebalance]]。
 
 ## Links
 

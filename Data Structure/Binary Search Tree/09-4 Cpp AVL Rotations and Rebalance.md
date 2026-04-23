@@ -27,6 +27,8 @@ protected:
 
 ## Balance Factor
 
+Concept: [[06 AVL Tree and Balance#Balance Factor|Balance Factor]]
+
 ```cpp
 private:
     int balanceFactor(Node* node) const {
@@ -37,6 +39,8 @@ private:
 AVL 要求每个节点的 balance factor 都在 `[-1, 1]`。
 
 ## rotateLeft
+
+Concept: [[07 AVL Rotations#rotateLeft(T)|rotateLeft(T)]]
 
 ```cpp
     Node* rotateLeft(Node* node) {
@@ -67,6 +71,8 @@ AVL 要求每个节点的 balance factor 都在 `[-1, 1]`。
 
 ## rotateRight
 
+Concept: [[07 AVL Rotations#rotateRight(T)|rotateRight(T)]]
+
 ```cpp
     Node* rotateRight(Node* node) {
         Node* pivot = node->left;
@@ -95,6 +101,8 @@ AVL 要求每个节点的 balance factor 都在 `[-1, 1]`。
 `rotateRight` 是 `rotateLeft` 的镜像。
 
 ## Rebalance
+
+Concept: [[07 AVL Rotations#Four AVL Cases|Four AVL Cases]] and [[06 AVL Tree and Balance#Insert in AVL|Insert in AVL]]
 
 ```cpp
     void rebalanceFrom(Node* node) {

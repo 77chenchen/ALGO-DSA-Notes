@@ -6,6 +6,8 @@
 
 ## Insert
 
+Concept: [[04 BST Update Operations#Insert(v)|Insert(v)]]
+
 ```cpp
     void insert(int key) {
         if (root == nullptr) {
@@ -44,6 +46,8 @@
 
 ## Remove Overview
 
+Concept: [[04 BST Update Operations#Remove(v)|Remove(v)]]
+
 ```cpp
     bool erase(int key) {
         Node* node = findNode(key);
@@ -65,6 +69,8 @@
 
 ## Remove Case 1 and Case 2
 
+Concept: [[04 BST Update Operations#Case 1: Leaf|Case 1: Leaf]] and [[04 BST Update Operations#Case 2: One Child|Case 2: One Child]]
+
 ```cpp
         if (node->left == nullptr) {
             rebalanceStart = node->parent;
@@ -83,6 +89,8 @@
 - Case 2 one child: 用唯一的 child 替换自己。
 
 ## Remove Case 3
+
+Concept: [[04 BST Update Operations#Case 3: Two Children|Case 3: Two Children]]
 
 ```cpp
         else {
@@ -109,7 +117,7 @@
 
 注意 successor 最多只有一个右孩子，因此物理删除 successor 会落回 Case 1 或 Case 2。
 
-## Why Move freq Together?
+## Why Move freq Together
 
 因为这份实现采用 multiset 语义：
 

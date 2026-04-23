@@ -19,6 +19,9 @@ left subtree -> root -> right subtree
 - 按 distinct key 输出：`O(number of nodes)`。
 - 按 multiset 全量输出：`O(total frequency)`。
 
+> [!tip] Implementation Jump
+> traversal helper 和公开 API 看 [[09-2 Cpp BST Query Operations#Traversal Helpers|Traversal Helpers]] 与 [[09-2 Cpp BST Query Operations#Public Traversal APIs|Public Traversal APIs]]。
+
 ## Preorder Traversal
 
 访问顺序：
@@ -62,6 +65,9 @@ size(x) = size(x.left) + freq(x) + size(x.right)
 
 如果 key 有重复，`Rank(v)` 通常返回第一个 `v` 的位置。
 
+> [!tip] Implementation Jump
+> 完整代码看 [[09-2 Cpp BST Query Operations#Rank and orderOfKey|C++ rank and orderOfKey]]。
+
 ## Select(k)
 
 `Select(k)` 返回第 `k` 小的 key。
@@ -73,6 +79,9 @@ size(x) = size(x.left) + freq(x) + size(x.right)
 - 否则跳过左子树和当前节点频率，去右子树。
 
 这也是 `O(h)`；在 AVL 中就是 `O(log N)`。
+
+> [!tip] Implementation Jump
+> 完整代码看 [[09-2 Cpp BST Query Operations#Select|C++ select]]。
 
 ## Links
 

@@ -17,6 +17,9 @@ not found
 
 搜索能跳过一整棵不可能包含答案的子树。
 
+> [!tip] Implementation Jump
+> 内部搜索函数看 [[09-1 Cpp Node and Utilities#Internal Search Helpers|findNode / minNode / maxNode]]；公开查询接口看 [[09-2 Cpp BST Query Operations#Contains and Count|contains and count]]。
+
 ## lower_bound(v)
 
 `lower_bound(v)` 返回 BST 中第一个 `>= v` 的 key。
@@ -27,12 +30,18 @@ not found
 
 实现技巧：从 root 往下走，遇到 `cur.key >= v` 就记录候选答案，并继续向左尝试找更小的可行值。
 
+> [!tip] Implementation Jump
+> 完整代码看 [[09-2 Cpp BST Query Operations#lowerBound|C++ lowerBound]]。
+
 ## Min() and Max()
 
 - `Min()`: 从 root 一直走 `left`，直到不能再走。
 - `Max()`: 从 root 一直走 `right`，直到不能再走。
 
 复杂度都是 `O(h)`。
+
+> [!tip] Implementation Jump
+> 完整代码看 [[09-2 Cpp BST Query Operations#Min and Max|C++ min and max]]。
 
 ## Successor(v)
 
@@ -46,6 +55,33 @@ not found
 
 不使用 parent pointer 时，也可以从 root 搜索 `v`，同时维护「当前见过的最小的大于 `v` 的节点」。
 
+Case A: `v` has a right subtree, so successor is the leftmost node in that right subtree.
+
+```mermaid
+graph TD
+    V((v))
+    R((right subtree))
+    S((successor))
+
+    V -->|right| R
+    R -->|keep going left| S
+```
+
+Case B: `v` has no right subtree, so go up until the first ancestor where the path came from the left.
+
+```mermaid
+graph TD
+    W((first larger ancestor w))
+    A["path down"]
+    V((v))
+
+    W -->|left subtree contains v| A
+    A --> V
+```
+
+> [!tip] Implementation Jump
+> 完整代码看 [[09-2 Cpp BST Query Operations#Successor and Predecessor|C++ successor and predecessor]]。
+
 ## Predecessor(v)
 
 `Predecessor(v)` 是严格小于 `v` 的最大 key，是 successor 的镜像：
@@ -53,6 +89,21 @@ not found
 - 如果 `v` 有左子树，答案是左子树中的 `Max()`。
 - 如果 `v` 没有左子树，就向上找第一个「从右边走上来」的祖先。
 - 如果 `v` 已经是最小值，则没有 predecessor。
+
+Mirror intuition:
+
+```mermaid
+graph TD
+    V((v))
+    L((left subtree))
+    P((predecessor))
+
+    V -->|left| L
+    L -->|keep going right| P
+```
+
+> [!tip] Implementation Jump
+> 完整代码看 [[09-2 Cpp BST Query Operations#Successor and Predecessor|C++ successor and predecessor]]。
 
 ## Links
 

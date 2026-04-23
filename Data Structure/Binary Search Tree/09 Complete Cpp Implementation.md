@@ -22,6 +22,23 @@
 - `parent`: 支持删除、向上回溯和 rotation。
 - `optional<int>`: 表示 `min/max/successor` 这类可能不存在的答案。
 
+## Concept to Code Map
+
+| Concept | Implementation |
+|---|---|
+| BST node fields | [[09-1 Cpp Node and Utilities#Class Skeleton and Node]] |
+| `height` / `size` maintenance | [[09-1 Cpp Node and Utilities#Height and Size Helpers]] |
+| Search / contains / count | [[09-2 Cpp BST Query Operations#Contains and Count]] |
+| `lower_bound` | [[09-2 Cpp BST Query Operations#lowerBound]] |
+| `Successor` / `Predecessor` | [[09-2 Cpp BST Query Operations#Successor and Predecessor]] |
+| `Insert(v)` | [[09-3 Cpp BST Insert and Remove#Insert]] |
+| `Remove(v)` overview | [[09-3 Cpp BST Insert and Remove#Remove Overview]] |
+| Remove case 1 and 2 | [[09-3 Cpp BST Insert and Remove#Remove Case 1 and Case 2]] |
+| Remove case 3 | [[09-3 Cpp BST Insert and Remove#Remove Case 3]] |
+| AVL rotations | [[09-4 Cpp AVL Rotations and Rebalance#rotateLeft]] and [[09-4 Cpp AVL Rotations and Rebalance#rotateRight]] |
+| AVL rebalance | [[09-4 Cpp AVL Rotations and Rebalance#Rebalance]] |
+| `Rank` / `Select` | [[09-2 Cpp BST Query Operations#Rank and orderOfKey]] and [[09-2 Cpp BST Query Operations#Select]] |
+
 ## Design Notes
 
 - `lowerBound(v)` 返回第一个 `>= v` 的 key。

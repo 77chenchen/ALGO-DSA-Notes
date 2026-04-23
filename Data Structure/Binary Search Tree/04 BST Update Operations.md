@@ -13,6 +13,9 @@
 
 插入位置一定是某个 leaf 的左孩子或右孩子。
 
+> [!tip] Implementation Jump
+> 完整代码看 [[09-3 Cpp BST Insert and Remove#Insert|C++ Insert implementation]]。
+
 ## Remove(v)
 
 删除前先执行一次 search：
@@ -21,15 +24,42 @@
 - 如果 `freq > 1`，只需要 `freq--`，树结构不变。
 - 如果 `freq == 1`，进入结构性删除。
 
+> [!tip] Implementation Jump
+> 删除主流程看 [[09-3 Cpp BST Insert and Remove#Remove Overview|C++ Remove overview]]。
+
 ## Case 1: Leaf
 
 如果要删除的节点是 leaf，直接断开它和 parent 的连接。
 
+```mermaid
+graph TD
+    P((parent))
+    V((v))
+    Null["null"]
+
+    P --> V
+    P -.->|after delete| Null
+```
+
 这一部分是 `O(1)`，但前面的搜索仍然是 `O(h)`。
+
+> [!tip] Implementation Jump
+> leaf 删除在 [[09-3 Cpp BST Insert and Remove#Remove Case 1 and Case 2|Remove Case 1 and Case 2]] 中由 `transplant(node, node->right)` 覆盖。
 
 ## Case 2: One Child
 
 如果节点只有一个孩子，把这个孩子接到被删除节点的 parent 上。
+
+```mermaid
+graph TD
+    P((parent))
+    V((v))
+    C((child))
+
+    P --> V
+    V --> C
+    P -.->|reconnect| C
+```
 
 本质是绕过当前节点：
 
@@ -39,6 +69,9 @@ parent --------> child
 ```
 
 这一部分也是 `O(1)`。
+
+> [!tip] Implementation Jump
+> one-child 删除看 [[09-3 Cpp BST Insert and Remove#Remove Case 1 and Case 2|C++ Remove Case 1 and Case 2]]。
 
 ## Case 3: Two Children
 
@@ -55,6 +88,39 @@ parent --------> child
 - 替换后仍满足 `left < root < right`。
 
 也可以用 predecessor 做镜像替换，理由完全对称。
+
+Before:
+
+```mermaid
+graph TD
+    V((v))
+    L["left subtree<br/>all less than v"]
+    R((right subtree))
+    S((successor))
+    SR["successor right subtree"]
+
+    V -->|left| L
+    V -->|right| R
+    R -->|leftmost path| S
+    S -->|right| SR
+```
+
+After replacing `v` with successor:
+
+```mermaid
+graph TD
+    S((successor))
+    L["left subtree<br/>all less than successor"]
+    R2["right subtree after removing successor<br/>all greater than successor"]
+
+    S -->|left| L
+    S -->|right| R2
+```
+
+关键直觉：successor 是右子树最小值，所以它放到 `v` 的位置后，左边仍然都更小，右边也仍然都更大。
+
+> [!tip] Implementation Jump
+> two-children 删除看 [[09-3 Cpp BST Insert and Remove#Remove Case 3|C++ Remove Case 3]]；为什么要一起移动 `freq` 看 [[09-3 Cpp BST Insert and Remove#Why Move freq Together|Why Move freq Together]]。
 
 ## Create BST
 

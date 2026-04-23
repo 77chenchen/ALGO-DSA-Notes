@@ -40,6 +40,9 @@ size
 - `height`: AVL 需要，用于维护平衡。
 - `size`: order statistics 需要，用于支持 `Rank` 和 `Select`。
 
+> [!tip] Implementation Jump
+> 节点结构看 [[09-1 Cpp Node and Utilities#Class Skeleton and Node|C++ Node struct]]；`height/size` 维护看 [[09-1 Cpp Node and Utilities#Height and Size Helpers|Height and Size Helpers]]。
+
 ## Parent Pointer Can Be Omitted
 
 `parent` 不是必须的。可以用以下方式替代：
@@ -49,6 +52,9 @@ size
 - 找 successor / predecessor 时，从 root 出发一路维护候选答案。
 
 不过 AVL 旋转需要频繁重连父子关系，保留 `parent` 会让实现更直接。
+
+> [!tip] Implementation Jump
+> parent pointer 的重连逻辑看 [[09-1 Cpp Node and Utilities#Transplant|transplant]] 和 [[09-4 Cpp AVL Rotations and Rebalance#rotateLeft|rotateLeft]] / [[09-4 Cpp AVL Rotations and Rebalance#rotateRight|rotateRight]]。
 
 ## Root, Leaf, Internal Node
 

@@ -5,6 +5,8 @@
 
 ## Contains and Count
 
+Concept: [[03 BST Query Operations#Search(v)|Search(v)]]
+
 ```cpp
     bool contains(int key) const {
         return findNode(key) != nullptr;
@@ -19,6 +21,8 @@
 `contains` 只看 key 是否存在，`count` 返回这个 key 的频率。
 
 ## Min and Max
+
+Concept: [[03 BST Query Operations#Min() and Max()|Min() and Max()]]
 
 ```cpp
     optional<int> min() const {
@@ -37,6 +41,8 @@
 空树没有最小值和最大值，所以返回 `optional<int>`。
 
 ## lowerBound
+
+Concept: [[03 BST Query Operations#lower_bound(v)|lower_bound(v)]]
 
 ```cpp
     optional<int> lowerBound(int key) const {
@@ -59,6 +65,8 @@
 遇到 `cur->key >= key` 时，当前节点可能是答案，但左子树里可能有更小的合法答案。
 
 ## Successor and Predecessor
+
+Concept: [[03 BST Query Operations#Successor(v)|Successor(v)]] and [[03 BST Query Operations#Predecessor(v)|Predecessor(v)]]
 
 ```cpp
     optional<int> successor(int key) const {
@@ -97,6 +105,8 @@
 这里没有依赖 parent pointer，而是从 root 出发一路维护候选答案。
 
 ## Rank and orderOfKey
+
+Concept: [[08 Traversal Rank Select#Rank(v)|Rank(v)]]
 
 ```cpp
     int orderOfKey(int key) const {
@@ -141,6 +151,8 @@
 
 ## Select
 
+Concept: [[08 Traversal Rank Select#Select(k)|Select(k)]]
+
 ```cpp
     optional<int> select(int kth) const {
         if (kth < 1 || kth > totalSize()) return nullopt;
@@ -166,6 +178,8 @@
 `select(k)` 返回第 `k` 小元素，`k` 是 1-based，并且重复元素会计入排名。
 
 ## Traversal Helpers
+
+Concept: [[08 Traversal Rank Select#Inorder Traversal|Traversal]]
 
 ```cpp
 private:
