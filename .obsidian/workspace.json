@@ -240,12 +240,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Data Structure/Binary Index Tree (Fenwick Tree).md",
+                "file": "Union Find Disjoint Set.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Binary Index Tree (Fenwick Tree) 的出链列表"
+              "title": "Union Find Disjoint Set 的出链列表"
             }
           },
           {
@@ -283,13 +283,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Data Structure/Binary Index Tree (Fenwick Tree).md",
+                "file": "Union Find Disjoint Set.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Binary Index Tree (Fenwick Tree) 的大纲"
+              "title": "Union Find Disjoint Set 的大纲"
             }
           },
           {
@@ -323,15 +323,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e34466c58fc1f83e",
+  "active": "21e28b774e3cded9",
   "lastOpenFiles": [
-    "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
+    "Minimum spinning tree/MST/Kruskal.md",
     "Union Find Disjoint Set.md",
+    "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
     "Union Find Disjoint Set",
     "Graph Traversal/Graph Traversal.md",
     "SSSP/SSSP ALGO/Dijkstra Algorithm.md",
     "Minimum spinning tree/MST/Prim Algorithm.md",
-    "Minimum spinning tree/MST/Kruskal.md",
     "Minimum spinning tree/MST.md",
     "SSSP/SSSP Problem.md",
     "Minimum spinning tree/MST",

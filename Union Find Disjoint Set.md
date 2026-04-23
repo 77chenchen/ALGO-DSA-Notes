@@ -175,7 +175,7 @@ int findSet(int i) {
 - 一开始 `rank` 的确反映树高
 - 但做了**路径压缩**后，树会被“压扁”
 - 此时某些节点的 `rank` 不再等于真实高度
-- 但没关系，因为 `rank` 只是一个**合并启发式信息**，不需要精确维护。:contentReference[oaicite:6]{index=6}
+- 但没关系，因为 `rank` 只是一个**合并启发式信息**，不需要精确维护。
 
 也就是说：
 
@@ -247,7 +247,7 @@ using namespace std;
 
 class DSU {
 private:
-    vector<int> parent, sz;
+    vector<int> parent, sz; //ith parent is parent[i], sz refers to size
 
 public:
     DSU(int n) {
@@ -309,7 +309,7 @@ public:
 O(α(N))
 ```
 
-其中 `α(N)` 是 **反 Ackermann 函数**，增长极慢，在实际范围内几乎可以看成常数。:contentReference[oaicite:7]{index=7}
+其中 `α(N)` 是 **反 Ackermann 函数**，增长极慢，在实际范围内几乎可以看成常数。
 
 所以并查集通常被视为“近似 O(1)”的数据结构。
 
@@ -333,6 +333,7 @@ dsu.unite(u, v);
 ---
 
 ### 7.2 Kruskal 最小生成树
+[[Kruskal]]
 
 Kruskal 的核心思想：
 
@@ -366,7 +367,7 @@ int kruskal(int n, vector<Edge>& edges) {
 ```
 
 并查集在这里就是用来快速判断“是否成环”的。  
-资料中也明确指出 UFDS 可用于无向图连通块和 Kruskal MST。:contentReference[oaicite:8]{index=8}
+资料中也明确指出 UFDS 可用于无向图连通块和 Kruskal MST。
 
 ---
 
@@ -425,148 +426,3 @@ public:
 ```
 
 ---
-
-## 9. 常见错误
-
-### 9.1 合并前没先找根
-
-错误写法：
-
-```cpp
-parent[a] = b;
-```
-
-这样可能把普通节点乱接，破坏结构。
-
-正确做法：
-
-```cpp
-a = find(a);
-b = find(b);
-if (a != b) parent[a] = b;
-```
-
----
-
-### 9.2 路径压缩写漏
-
-错误：
-
-```cpp
-int find(int x) {
-    if (parent[x] == x) return x;
-    return find(parent[x]);
-}
-```
-
-这只是查找，没有压缩路径。
-
-正确：
-
-```cpp
-int find(int x) {
-    if (parent[x] == x) return x;
-    return parent[x] = find(parent[x]);
-}
-```
-
----
-
-### 9.3 以为 rank 是真实高度
-
-不是。  
-做过路径压缩之后，`rank` 往往已经不是实际高度了，它只是用于启发式合并。:contentReference[oaicite:9]{index=9}
-
----
-
-### 9.4 并查集不能删边
-
-普通并查集只适合：
-
-- 合并集合
-- 查询连通性
-
-不适合处理：
-
-- 撤销合并
-- 动态删边
-- cut / split
-
-资料中也特别指出，UFDS 没有天然的“de-Union”操作。:contentReference[oaicite:10]{index=10}
-
----
-
-## 10. 一句话总结
-
-> [!important]
-> 并查集 = 用树表示集合。  
-> `find` 找根，`union` 合并根。  
-> 配合 **路径压缩** 和 **按秩/按大小合并** 后，复杂度几乎是常数。  
-> 它最经典的用途就是：
-> - 判断连通性
-> - 维护连通块
-> - Kruskal 最小生成树
-
----
-
-## 11. 推荐记忆模板
-
-```cpp
-struct DSU {
-    vector<int> p, sz;
-
-    DSU(int n) {
-        p.resize(n);
-        sz.assign(n, 1);
-        iota(p.begin(), p.end(), 0);
-    }
-
-    int find(int x) {
-        if (p[x] == x) return x;
-        return p[x] = find(p[x]);
-    }
-
-    bool unite(int a, int b) {
-        a = find(a);
-        b = find(b);
-        if (a == b) return false;
-        if (sz[a] < sz[b]) swap(a, b);
-        p[b] = a;
-        sz[a] += sz[b];
-        return true;
-    }
-
-    bool same(int a, int b) {
-        return find(a) == find(b);
-    }
-};
-```
-
----
-
-## 12. 术语对照
-
-| 英文 | 中文 |
-|---|---|
-| Union-Find Disjoint Sets | 并查集 |
-| Disjoint Sets Union (DSU) | 并查集 |
-| representative item | 代表元 |
-| root | 根节点 |
-| path compression | 路径压缩 |
-| union by rank | 按秩合并 |
-| union by size | 按大小合并 |
-| connected components | 连通块 |
-| Minimum Spanning Tree | 最小生成树 |
-
----
-
-## 13. 来源摘要
-
-这份笔记基于你提供的 UFDS 讲义整理，讲义内容包含：
-
-- 并查集定义
-- `FindSet / IsSameSet / UnionSet`
-- 路径压缩
-- 按秩合并
-- 复杂度 `O(α(N))`
-- 在连通块与 Kruskal 中的应用。:contentReference[oaicite:11]{index=11}

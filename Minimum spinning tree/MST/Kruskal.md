@@ -1,4 +1,5 @@
 # Kruskal's Algorithm
+[[Union Find Disjoint Set]]
 
 ## 1. MST 是什么
 
