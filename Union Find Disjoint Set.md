@@ -183,7 +183,7 @@ int findSet(int i) {
 
 ---
 
-## 5. C++ 标准实现（推荐背）
+## 5. C++  implementation
 
 ### 5.1 按 rank 合并版本
 
