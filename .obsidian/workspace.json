@@ -125,16 +125,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Minimum spinning tree/MST/Prim Algorithm.md",
+                "file": "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Prim Algorithm"
+              "title": "Topological Sort (DFS Kahn)"
+            }
+          },
+          {
+            "id": "e34466c58fc1f83e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Union Find Disjoint Set.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Union Find Disjoint Set"
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "vertical"
@@ -207,7 +221,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Minimum spinning tree/MST/Prim Algorithm.md",
+                "file": "Union Find Disjoint Set.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -217,7 +231,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Prim Algorithm 的反向链接列表"
+              "title": "Union Find Disjoint Set 的反向链接列表"
             }
           },
           {
@@ -309,17 +323,20 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f9b1f59820806043",
+  "active": "e34466c58fc1f83e",
   "lastOpenFiles": [
-    "Minimum spinning tree/MST/Kruskal.md",
+    "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
+    "Union Find Disjoint Set.md",
+    "Union Find Disjoint Set",
+    "Graph Traversal/Graph Traversal.md",
+    "SSSP/SSSP ALGO/Dijkstra Algorithm.md",
     "Minimum spinning tree/MST/Prim Algorithm.md",
+    "Minimum spinning tree/MST/Kruskal.md",
     "Minimum spinning tree/MST.md",
     "SSSP/SSSP Problem.md",
     "Minimum spinning tree/MST",
-    "Graph Traversal/Graph Traversal.md",
     "SSSP/SSSP ALGO/Modified Dijkstra.md",
     "Minimum spinning tree",
-    "SSSP/SSSP ALGO/Dijkstra Algorithm.md",
     "SSSP/SSSP ALGO/BFS for SSSP.md",
     "SSSP/SSSP ALGO/Bellman-Ford algorithm.md",
     "SSSP/SSSP ALGO",
@@ -327,7 +344,6 @@
     "Graph Traversal/Graph/Articulation Points and Bridges.md",
     "Graph Traversal/Graph/Strongly Connected Components (Kosaraju Tarjan).md",
     "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
-    "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
     "Graph Traversal/Graph/Count Paths in DAG by Topological Order + DP.md",
     "Graph Traversal/Graph/Comparison Summary.md",
     "Graph Traversal/Graph/Bipartite Graph Check.md",
@@ -341,7 +357,6 @@
     "Graph Traversal",
     "Graph Traversal/Graph/Common Pitfalls / Confusions.md",
     "Graph Traversal/Graph/2-SAT.md",
-    "Graph Traversal/Graph",
     "Strongly Connected Components (Kosaraju / Tarjan).md",
     "Topological Sort (DFS / Kahn).md",
     "1. Cycle Detection in Directed Graphs.md",
