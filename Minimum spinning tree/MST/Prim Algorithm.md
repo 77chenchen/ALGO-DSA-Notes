@@ -271,29 +271,84 @@ w(e_k) \le w(e^*)
 
 这里给出常见写法：优先队列里存 `(weight, vertex)`。
 
-```text
-Prim(s):
-    mark all vertices as unvisited
-    visited[s] = true
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
 
-    create empty priority queue PQ
-    for each edge (s, v, w):
-        insert (w, v) into PQ
+struct Edge {
+    int to, weight;
+};
 
-    MST_weight = 0
+int main() {
 
-    while PQ is not empty:
-        (w, v) = extract-min(PQ)
+    int n, m;
+    cin >> n >> m;
 
-        if visited[v]:
-            continue
+    vector<vector<Edge>> adj(n);
 
-        visited[v] = true
-        MST_weight += w
+    for (int i = 0; i < m; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        adj[u].push_back({v, w});
+        adj[v].push_back({u, w});
+    }
 
-        for each edge (v, x, weight_vx):
-            if not visited[x]:
-                insert (weight_vx, x) into PQ
+    // visited[i] 表示点 i 是否已经加入 MST
+    vector<bool> visited(n, false);
+
+    // parent[i] 表示 MST 中 i 的父节点
+    vector<int> parent(n, -1);
+
+    // min_w[i] 表示当前把 i 接到 MST 的最小边权
+    vector<int> min_w(n, INT_MAX);
+
+    // 小根堆: {边权, 点编号}
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+
+    // 从 0 开始
+    min_w[0] = 0;
+    pq.push({0, 0});
+
+    int totalWeight = 0;
+    int count = 0;
+
+    while (!pq.empty()) {
+        auto [w, u] = pq.top();
+        pq.pop();
+
+        if (visited[u]) continue;
+
+        visited[u] = true;
+        totalWeight += w;
+        count++;
+
+        for (auto &e : adj[u]) {
+            int v = e.to;
+            int weight = e.weight;
+
+            if (!visited[v] && weight < min_w[v]) {
+                min_w[v] = weight;
+                parent[v] = u;
+                pq.push({weight, v});
+            }
+        }
+    }
+
+    // 如果不是连通图，就不存在最小生成树
+    if (count != n) {
+        cout << "Graph is not connected, no MST exists.\n";
+        return 0;
+    }
+
+    cout << "Edges in MST:\n";
+    for (int i = 1; i < n; i++) {
+        cout << parent[i] << " - " << i << " (weight = " << min_w[i] << ")\n";
+    }
+
+    cout << "Total weight = " << totalWeight << "\n";
+
+    return 0;
+}
 ```
 
 ## Links

@@ -4,6 +4,9 @@
 > BST 查询操作的共同模式是：从 root 出发，根据当前 key 和目标值的大小关系，决定向左、向右，或者停止。  
 > 除遍历外，大多数查询复杂度都是 `O(h)`，其中 `h` 是树高。
 
+> [!tip] Visual Legend
+> Red = 当前查询的节点 `v`，Teal = 查询答案，Blue = 候选子树或普通子树。
+
 ## Search(v)
 
 ```text
@@ -58,25 +61,47 @@ not found
 Case A: `v` has a right subtree, so successor is the leftmost node in that right subtree.
 
 ```mermaid
-graph TD
-    V((v))
-    R((right subtree))
-    S((successor))
+flowchart TD
+    V(("v"))
+    R(("right subtree"))
+    S(("successor<br/>leftmost in right subtree"))
+    Bigger["all remaining nodes here<br/>are greater than successor"]
 
     V -->|right| R
     R -->|keep going left| S
+    R --> Bigger
+
+    classDef current fill:#ef4444,stroke:#7f1d1d,color:#fff,stroke-width:2px;
+    classDef answer fill:#14b8a6,stroke:#134e4a,color:#fff,stroke-width:2px;
+    classDef subtree fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e,stroke-width:1px,stroke-dasharray: 5 4;
+
+    class V current;
+    class S answer;
+    class R,Bigger subtree;
 ```
 
 Case B: `v` has no right subtree, so go up until the first ancestor where the path came from the left.
 
 ```mermaid
-graph TD
-    W((first larger ancestor w))
-    A["path down"]
-    V((v))
+flowchart TD
+    W(("first larger ancestor<br/>answer = w"))
+    A["path down through left subtree"]
+    V(("v<br/>no right subtree"))
+    Dead["no larger value below v"]
 
     W -->|left subtree contains v| A
     A --> V
+    V -.-> Dead
+
+    classDef answer fill:#14b8a6,stroke:#134e4a,color:#fff,stroke-width:2px;
+    classDef current fill:#ef4444,stroke:#7f1d1d,color:#fff,stroke-width:2px;
+    classDef path fill:#fef3c7,stroke:#d97706,color:#78350f,stroke-width:1px;
+    classDef empty fill:#f8fafc,stroke:#94a3b8,color:#475569,stroke-dasharray: 5 4;
+
+    class W answer;
+    class V current;
+    class A path;
+    class Dead empty;
 ```
 
 > [!tip] Implementation Jump
@@ -93,13 +118,23 @@ graph TD
 Mirror intuition:
 
 ```mermaid
-graph TD
-    V((v))
-    L((left subtree))
-    P((predecessor))
+flowchart TD
+    V(("v"))
+    L(("left subtree"))
+    P(("predecessor<br/>rightmost in left subtree"))
+    Smaller["all remaining nodes here<br/>are smaller than predecessor"]
 
     V -->|left| L
     L -->|keep going right| P
+    L --> Smaller
+
+    classDef current fill:#ef4444,stroke:#7f1d1d,color:#fff,stroke-width:2px;
+    classDef answer fill:#14b8a6,stroke:#134e4a,color:#fff,stroke-width:2px;
+    classDef subtree fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e,stroke-width:1px,stroke-dasharray: 5 4;
+
+    class V current;
+    class P answer;
+    class L,Smaller subtree;
 ```
 
 > [!tip] Implementation Jump

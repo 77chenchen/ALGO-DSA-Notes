@@ -32,7 +32,7 @@
 - 如果目标是会写普通 BST，重点看 [[02 BST Core Concepts]]、[[03 BST Query Operations]]、[[04 BST Update Operations]]。
 - 如果目标是掌握复杂度边界，重点看 [[05 Complexity and Height]]。
 - 如果目标是掌握 AVL，重点看 [[06 AVL Tree and Balance]]、[[07 AVL Rotations]]。
-- 如果目标是做竞赛题，最后看 [[08 Traversal Rank Select]] 和 [[09 Complete Cpp Implementation]]。
+- 最后看 [[08 Traversal Rank Select]] 和 [[09 Complete Cpp Implementation]]。
 
 ## Core Invariants
 

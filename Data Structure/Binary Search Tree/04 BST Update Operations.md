@@ -3,6 +3,9 @@
 > [!summary]
 > BST 更新操作会改变树结构。普通 BST 的 `Insert` 和 `Remove` 都是 `O(h)`，但如果树退化成链，`h` 可能达到 `N - 1`。
 
+> [!tip] Visual Legend
+> Red = 被删除或被替换的节点，Teal = 保留下来并接管位置的节点，Yellow = 被重新接上的 child，Blue = 整棵子树。
+
 ## Insert(v)
 
 插入和搜索很像：
@@ -32,13 +35,30 @@
 如果要删除的节点是 leaf，直接断开它和 parent 的连接。
 
 ```mermaid
-graph TD
-    P((parent))
-    V((v))
-    Null["null"]
+flowchart LR
+    subgraph Before["Before"]
+        direction TB
+        P1(("parent"))
+        V1(("v<br/>leaf"))
+        P1 --> V1
+    end
 
-    P --> V
-    P -.->|after delete| Null
+    V1 -.->|delete leaf| P2
+
+    subgraph After["After"]
+        direction TB
+        P2(("parent"))
+        Empty["empty child slot"]
+        P2 -.-> Empty
+    end
+
+    classDef parent fill:#14b8a6,stroke:#134e4a,color:#fff,stroke-width:2px;
+    classDef removed fill:#ef4444,stroke:#7f1d1d,color:#fff,stroke-width:2px;
+    classDef empty fill:#f8fafc,stroke:#94a3b8,color:#475569,stroke-dasharray: 5 4;
+
+    class P1,P2 parent;
+    class V1 removed;
+    class Empty empty;
 ```
 
 这一部分是 `O(1)`，但前面的搜索仍然是 `O(h)`。
@@ -51,22 +71,35 @@ graph TD
 如果节点只有一个孩子，把这个孩子接到被删除节点的 parent 上。
 
 ```mermaid
-graph TD
-    P((parent))
-    V((v))
-    C((child))
+flowchart LR
+    subgraph Before["Before"]
+        direction TB
+        P1(("parent"))
+        V1(("v"))
+        C1(("child"))
+        P1 --> V1
+        V1 --> C1
+    end
 
-    P --> V
-    V --> C
-    P -.->|reconnect| C
+    V1 -.->|bypass v| C2
+
+    subgraph After["After"]
+        direction TB
+        P2(("parent"))
+        C2(("child"))
+        P2 --> C2
+    end
+
+    classDef parent fill:#14b8a6,stroke:#134e4a,color:#fff,stroke-width:2px;
+    classDef removed fill:#ef4444,stroke:#7f1d1d,color:#fff,stroke-width:2px;
+    classDef child fill:#facc15,stroke:#a16207,color:#111827,stroke-width:2px;
+
+    class P1,P2 parent;
+    class V1 removed;
+    class C1,C2 child;
 ```
 
-本质是绕过当前节点：
-
-```text
-parent -> node -> child
-parent --------> child
-```
+本质是绕过当前节点，让 `parent` 直接指向原本的唯一 `child`。
 
 这一部分也是 `O(1)`。
 
@@ -92,29 +125,40 @@ parent --------> child
 Before:
 
 ```mermaid
-graph TD
-    V((v))
-    L["left subtree<br/>all less than v"]
-    R((right subtree))
-    S((successor))
-    SR["successor right subtree"]
+flowchart LR
+    subgraph Before["Before: v has two children"]
+        direction TB
+        V(("v"))
+        L["left subtree<br/>all less than v"]
+        R(("right subtree"))
+        S(("successor<br/>minimum in right subtree"))
+        SR["successor right subtree"]
 
-    V -->|left| L
-    V -->|right| R
-    R -->|leftmost path| S
-    S -->|right| SR
-```
+        V -->|left| L
+        V -->|right| R
+        R -->|leftmost path| S
+        S -->|right| SR
+    end
 
-After replacing `v` with successor:
+    S -.->|copy successor key and freq into v| S2
 
-```mermaid
-graph TD
-    S((successor))
-    L["left subtree<br/>all less than successor"]
-    R2["right subtree after removing successor<br/>all greater than successor"]
+    subgraph After["After: successor takes v's position"]
+        direction TB
+        S2(("successor"))
+        L2["left subtree<br/>all less than successor"]
+        R2["right subtree after removing successor<br/>all greater than successor"]
 
-    S -->|left| L
-    S -->|right| R2
+        S2 -->|left| L2
+        S2 -->|right| R2
+    end
+
+    classDef target fill:#ef4444,stroke:#7f1d1d,color:#fff,stroke-width:2px;
+    classDef successor fill:#14b8a6,stroke:#134e4a,color:#fff,stroke-width:2px;
+    classDef subtree fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e,stroke-width:1px,stroke-dasharray: 5 4;
+
+    class V target;
+    class S,S2 successor;
+    class L,L2,R,SR,R2 subtree;
 ```
 
 关键直觉：successor 是右子树最小值，所以它放到 `v` 的位置后，左边仍然都更小，右边也仍然都更大。

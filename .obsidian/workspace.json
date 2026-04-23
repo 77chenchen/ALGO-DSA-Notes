@@ -139,12 +139,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Data Structure/Binary Search Tree/06 AVL Tree and Balance.md",
-                "mode": "preview",
+                "file": "Minimum spinning tree/MST/Prim Algorithm.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06 AVL Tree and Balance"
+              "title": "Prim Algorithm"
             }
           }
         ],
@@ -221,7 +221,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Data Structure/Binary Search Tree/06 AVL Tree and Balance.md",
+                "file": "Minimum spinning tree/MST/Prim Algorithm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -231,7 +231,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "06 AVL Tree and Balance 的反向链接列表"
+              "title": "Prim Algorithm 的反向链接列表"
             }
           },
           {
@@ -240,12 +240,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Data Structure/Binary Search Tree/06 AVL Tree and Balance.md",
+                "file": "Minimum spinning tree/MST/Prim Algorithm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "06 AVL Tree and Balance 的出链列表"
+              "title": "Prim Algorithm 的出链列表"
             }
           },
           {
@@ -283,13 +283,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Data Structure/Binary Search Tree/06 AVL Tree and Balance.md",
+                "file": "Minimum spinning tree/MST/Prim Algorithm.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "06 AVL Tree and Balance 的大纲"
+              "title": "Prim Algorithm 的大纲"
             }
           },
           {
@@ -325,32 +325,32 @@
   },
   "active": "e34466c58fc1f83e",
   "lastOpenFiles": [
+    "Minimum spinning tree/MST.md",
+    "Data Structure/Binary Search Tree.md",
+    "Data Structure/Binary Index Tree (Fenwick Tree).md",
+    "SSSP/SSSP Problem.md",
+    "Data Structure/Binary Search Tree/07 AVL Rotations.md",
+    "Minimum spinning tree/MST/Prim Algorithm.md",
+    "Data Structure/Binary Search Tree/09-2 Cpp BST Query Operations.md",
+    "Data Structure/Binary Search Tree/06 AVL Tree and Balance.md",
+    "Minimum spinning tree/MST/Kruskal.md",
+    "Graph Traversal/Graph/Articulation Points and Bridges.md",
+    "Data Structure/Binary Search Tree/09-4 Cpp AVL Rotations and Rebalance.md",
+    "Data Structure/Binary Search Tree/09-1 Cpp Node and Utilities.md",
     "Data Structure/Binary Search Tree/05 Complexity and Height.md",
     "Data Structure/Binary Search Tree/04 BST Update Operations.md",
     "Data Structure/Binary Search Tree/03 BST Query Operations.md",
-    "Minimum spinning tree/MST/Prim Algorithm.md",
-    "Minimum spinning tree/MST/Kruskal.md",
     "Graph Traversal/Graph/Topological Sort (DFS Kahn).md",
     "Graph Traversal/Graph/Strongly Connected Components (Kosaraju Tarjan).md",
     "Graph Traversal/Graph/Cycle Detection in Directed Graphs.md",
     "Graph Traversal/Graph/Count Paths in DAG by Topological Order + DP.md",
     "Graph Traversal/Graph/Common Pitfalls and Confusions.md",
     "Graph Traversal/Graph/Bipartite Graph Check.md",
-    "Graph Traversal/Graph/Articulation Points and Bridges.md",
     "Graph Traversal/Graph/2-SAT.md",
-    "Data Structure/Binary Index Tree (Fenwick Tree).md",
     "Data Structure/Binary Search Tree/02 BST Core Concepts.md",
     "Data Structure/Binary Search Tree/01 Table ADT and Motivation.md",
-    "Data Structure/Binary Search Tree/Binary Search Tree.md",
     "Data Structure/Binary Search Tree/BST AVL Cheat Sheet.md",
     "Data Structure/Binary Search Tree/09-5 Cpp Example and Notes.md",
-    "Data Structure/Binary Search Tree/09-4 Cpp AVL Rotations and Rebalance.md",
-    "Data Structure/Binary Search Tree/09-3 Cpp BST Insert and Remove.md",
-    "Data Structure/Binary Search Tree/09-2 Cpp BST Query Operations.md",
-    "Data Structure/Binary Search Tree/09-1 Cpp Node and Utilities.md",
-    "Data Structure/Binary Search Tree/09 Complete Cpp Implementation.md",
-    "Data Structure/Binary Search Tree/08 Traversal Rank Select.md",
-    "Data Structure/Binary Search Tree/07 AVL Rotations.md",
     "Data Structure/Binary Search Tree/BST_AVL_Complete.cpp",
     "Data Structure/Binary Search Tree",
     "Union Find Disjoint Set",

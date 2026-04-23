@@ -26,13 +26,24 @@ bf(x) = height(x.left) - height(x.right)
 ```
 
 ```mermaid
-graph TD
-    X((x))
+flowchart TD
+    X(("x"))
     L["left subtree<br/>height = hL"]
     R["right subtree<br/>height = hR"]
+    BF["bf(x) = hL - hR"]
 
     X -->|left| L
     X -->|right| R
+    L -.->|contributes| BF
+    R -.->|contributes| BF
+
+    classDef root fill:#14b8a6,stroke:#134e4a,color:#fff,stroke-width:2px;
+    classDef subtree fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e,stroke-width:1px,stroke-dasharray: 5 4;
+    classDef formula fill:#fef3c7,stroke:#d97706,color:#78350f,stroke-width:2px;
+
+    class X root;
+    class L,R subtree;
+    class BF formula;
 ```
 
 ```text
